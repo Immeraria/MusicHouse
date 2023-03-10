@@ -44,6 +44,7 @@ class CatalogController extends Controller
 
     public function basket()
     {
-        return view('catalog.basket');
+
+        return view('catalog.basket', ['products' => Product::all()]);
     }
 }

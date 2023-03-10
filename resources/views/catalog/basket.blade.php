@@ -16,18 +16,19 @@
 
                 <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Товары в корзине</h3>
 
+                @foreach($products as $product)
                 <div class="d-flex align-items-center mb-5">
                   <div class="flex-shrink-0">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/13.webp"
+                    <img src="{{ asset('storage/image/products/'.$product->image) }}"
                       class="img-fluid" style="width: 150px;" alt="Generic placeholder image">
                   </div>
                   <div class="flex-grow-1 ms-3">
                     <a href="#!" class="float-end text-black"><i class="fas fa-times"></i></a>
-                    <h5 class="text-primary">Samsung Galaxy M11 64GB</h5>
-                    <h6 style="color: #9e9e9e;">Color: white</h6>
+                    <h5 class="text-primary">{{$product->title}}</h5>
+                    <h6 style="color: #9e9e9e;">Бренд: {{$product->brand}}</h6>
                     <div class="d-flex align-items-center">
-                      <p class="fw-bold mb-0 me-5 pe-3">799$</p>
-                      <div class="def-number-input number-input safari_only align-items-center">
+                      <p class="fw-bold mb-0 me-5 pe-3">{{$product->price}}руб.</p>
+                      <div class="d-flex def-number-input number-input safari_only align-items-center">
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                           class="minus"></button>
                         <input class="quantity fw-bold text-black" min="0" name="quantity" value="1"
@@ -38,62 +39,18 @@
                     </div>
                   </div>
                 </div>
+                @endforeach
 
-                <div class="d-flex align-items-center mb-5">
-                  <div class="flex-shrink-0">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp"
-                      class="img-fluid" style="width: 150px;" alt="Generic placeholder image">
-                  </div>
-                  <div class="flex-grow-1 ms-3">
-                    <a href="#!" class="float-end text-black"><i class="fas fa-times"></i></a>
-                    <h5 class="text-primary">Headphones Bose 35 II</h5>
-                    <h6 style="color: #9e9e9e;">Color: Red</h6>
-                    <div class="d-flex align-items-center">
-                      <p class="fw-bold mb-0 me-5 pe-3">239$</p>
-                      <div class="def-number-input number-input safari_only align-items-center">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                          class="minus"></button>
-                        <input class="quantity fw-bold text-black" min="0" name="quantity" value="1"
-                          type="number">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                          class="plus"></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="d-flex align-items-center mb-5">
-                  <div class="flex-shrink-0">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/1.webp"
-                      class="img-fluid" style="width: 150px;" alt="Generic placeholder image">
-                  </div>
-                  <div class="flex-grow-1 ms-3">
-                    <a href="#!" class="float-end text-black"><i class="fas fa-times"></i></a>
-                    <h5 class="text-primary">iPad 9.7 6-gen WiFi 32GB</h5>
-                    <h6 style="color: #9e9e9e;">Color: rose pink</h6>
-                    <div class="d-flex align-items-center">
-                      <p class="fw-bold mb-0 me-5 pe-3">659$</p>
-                      <div class="def-number-input number-input safari_only align-items-center">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                          class="minus"></button>
-                        <input class="quantity fw-bold text-black" min="0" name="quantity" value="2"
-                          type="number">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                          class="plus"></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
                 <hr class="mb-4" style="height: 2px; background-color: #1266f1; opacity: 1;">
 
                 <div class="d-flex justify-content-between px-x">
-                  <p class="fw-bold">Discount:</p>
-                  <p class="fw-bold">95$</p>
+                  <p class="fw-bold">Скидка:</p>
+                  <p class="fw-bold">0руб.</p>
                 </div>
                 <div class="d-flex justify-content-between p-2 mb-2" style="background-color: #e1f5fe;">
-                  <h5 class="fw-bold mb-0">Total:</h5>
-                  <h5 class="fw-bold mb-0">2261$</h5>
+                  <h5 class="fw-bold mb-0">Всего:</h5>
+                  <h5 class="fw-bold mb-0"> руб.</h5>
                 </div>
 
               </div>
@@ -135,7 +92,7 @@
                   <p class="mb-5">Продолжая, вы соглашаетесь с пользовательским соглашением <a
                       href="#!">пользовательским соглашением</a>.</p>
 
-                  <button type="button" class="btn btn-primary btn-block btn-lg">Buy now</button>
+                  <button type="button" class="btn btn-primary btn-block btn-lg">Купить</button>
 
                 </form>
 
