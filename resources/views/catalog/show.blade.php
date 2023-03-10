@@ -7,12 +7,12 @@
 
     <div class="row">
         <div class="col">
-            <img class="w-100" src="/images/guiltar.jpg" alt="гитара">
+            <img class="w-100" src="{{ asset('storage/image/products/'.$product->image) }}" alt="{{ $product->image }}">
         </div>
         <div class="col align-items-center">
-            <h3 class="my-4">Bakugan Series</h3>
-            <p class="my-3">Гитара невероятная, она может издавать звуки и очень выглядит как гитара. У нее есть струны. Она умеет делать сальто назад. И у нее прекрасные уши.</p>
-            <h2 class="my-3">6000 руб.</h2>
+            <h3 class="my-4">{{ $product->brand }}</h3>
+            <p class="my-3">{{ $product->description }}</p>
+            <h2 class="my-3">{{ $product->price }}</h2>
             <p class="my-3">Доставка по Тюменской области</p>
             <div class="my-3">
                 <button class="btn btn-dark">
@@ -22,7 +22,7 @@
                     Купить сейчас
                 </button>
             </div>
-            <p>Осталось 10 штук</p>
+            <p>Осталось {{ $product->quantity }} штук</p>
         </div>
     </div>
 </div>
